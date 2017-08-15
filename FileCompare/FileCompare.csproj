@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2C09D55-9D9D-4178-811B-E70CB2B2FD97}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileCompare</RootNamespace>
+    <AssemblyName>FileCompare</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bytescout.PDFRenderer">
+      <HintPath>Resources\PDFtoImage\Bytescout.PDFRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>Resources\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q16-AnyCPU">
+      <HintPath>Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\lib\net40-client\Magick.NET-Q16-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XsPDF">
+      <HintPath>Resources\PDFtoImage\XsPDF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileToImage.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\DotNetZip.1.10.1\DotNetZip.1.10.1.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\Magick.NET-Q16-AnyCPU.7.0.5.502.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\Test File\pdf.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DotNetZip.1.10.1\lib\net20\DotNetZip.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DotNetZip.1.10.1\lib\net20\DotNetZip.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\Copyright.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoTxt\Bytescout.PDFExtractor.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoTxt\Bytescout.PDFExtractor.OCRExtension.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoTxt\Bytescout.PDFExtractor.XML">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoImage\Bytescout.PDFRenderer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoImage\Bytescout.PDFRenderer.XML">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoImage\x64\XsPDF.Native.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoImage\x86\XsPDF.Native.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoImage\XsPDF.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PDFtoImage\XsPDF.Native.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\lib\net20\Magick.NET-Q16-AnyCPU.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\lib\net20\Magick.NET-Q16-AnyCPU.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\lib\net40-client\Magick.NET-Q16-AnyCPU.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\lib\net40-client\Magick.NET-Q16-AnyCPU.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Magick.NET-Q16-AnyCPU.7.0.5.502\Readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BaseNotices\P0.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BaseNotices\P1.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BaseNotices\P2.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BaseNotices\P3.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BaseNotices\P4.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\PDFNet.6.7.1.59452\build\net40\PDFNet.targets" Condition="Exists('..\packages\PDFNet.6.7.1.59452\build\net40\PDFNet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\PDFNet.6.7.1.59452\build\net40\PDFNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PDFNet.6.7.1.59452\build\net40\PDFNet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

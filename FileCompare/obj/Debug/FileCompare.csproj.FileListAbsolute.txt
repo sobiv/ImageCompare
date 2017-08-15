@@ -1,0 +1,2 @@
+C:\Sobi\File Compare\FileCompare\FileCompare\obj\Debug\FileCompare.csprojResolveAssemblyReference.cache
+C:\Sobi\Backup\FileCompare\FileCompare\bin\Debug\FileCompare.exe.config
